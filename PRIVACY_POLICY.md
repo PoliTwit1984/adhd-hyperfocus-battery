@@ -57,4 +57,4 @@ If you have questions about this privacy policy, please contact:
 
 ---
 
-© 2026 Joe Wilson. All rights reserved.
+© 2026 Obey LLC. All rights reserved.
