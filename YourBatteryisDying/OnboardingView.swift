@@ -1,6 +1,6 @@
 //
 //  OnboardingView.swift
-//  deadbatterydummies
+//  Your Battery Is Dying
 //
 //  Created by Joe Wilson on 2/2/26.
 //
@@ -265,7 +265,7 @@ struct WelcomePage: View {
                     )
                     .shadow(color: Color.purple.opacity(0.2), radius: 20, y: 10)
                 
-                Image(systemName: "brain.head.profile.fill")
+                Image(systemName: "battery.75percent")
                     .font(.system(size: 60, weight: .light))
                     .foregroundStyle(
                         LinearGradient(
@@ -282,12 +282,12 @@ struct WelcomePage: View {
                 Text("Welcome to")
                     .font(.system(size: 20, weight: .medium, design: .rounded))
                     .foregroundStyle(.secondary)
-                
-                Text("ADHD Hyperfocus Battery")
+
+                Text("Your Battery Is Dying")
                     .font(.system(size: 32, weight: .bold, design: .rounded))
                     .foregroundStyle(.primary)
-                
-                Text("Full-screen alerts for the hyperfocused mind")
+
+                Text("Full-screen alerts you can't ignore")
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundStyle(.purple)
                 
@@ -749,7 +749,7 @@ struct AllSetPage: View {
                                 .fill(Color.purple.opacity(0.2))
                                 .frame(width: 28, height: 22)
                             
-                            Image(systemName: "brain.head.profile.fill")
+                            Image(systemName: "battery.75percent")
                                 .font(.system(size: 14))
                                 .foregroundStyle(.purple)
                         }
@@ -784,7 +784,7 @@ struct AllSetPage: View {
                             Circle()
                                 .fill(Color.purple.opacity(0.15))
                                 .frame(width: 32, height: 32)
-                            Image(systemName: "brain.head.profile.fill")
+                            Image(systemName: "battery.75percent")
                                 .font(.system(size: 14))
                                 .foregroundStyle(.purple)
                         }
@@ -867,7 +867,7 @@ struct AllSetPage: View {
             .opacity(menuBarOpacity)
             
             // Final message
-            Text("Click the brain icon anytime to adjust settings or test the alert.")
+            Text("Click the battery icon in your menu bar to adjust settings or test the alert.")
                 .font(.system(size: 14, weight: .regular, design: .rounded))
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)

@@ -6,14 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		E412FC1F2E0CFEC69F1A9E90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCE9B12E2F314315000E2A75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE9B1352F314315000E2A75;
+			remoteInfo = deadbatterydummies;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		BCE9B1362F314316000E2A75 /* deadbatterydummies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = deadbatterydummies.app; path = "ADHD Hyperfocus Battery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0164F28E4AC60F0447D7FAD2 /* Your Battery is DyingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Your Battery is DyingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCE9B1362F314316000E2A75 /* Your Battery Is Dying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Your Battery Is Dying.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BCE9B1382F314316000E2A75 /* deadbatterydummies */ = {
+		73F277933899CC7245F22487 /* YourBatteryisDyingTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = deadbatterydummies;
+			path = YourBatteryisDyingTests;
+			sourceTree = "<group>";
+		};
+		BCE9B1382F314316000E2A75 /* YourBatteryisDying */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = YourBatteryisDying;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +42,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E74C492B359BAA0A29C8A458 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		BCE9B12D2F314315000E2A75 = {
 			isa = PBXGroup;
 			children = (
-				BCE9B1382F314316000E2A75 /* deadbatterydummies */,
+				BCE9B1382F314316000E2A75 /* YourBatteryisDying */,
+				73F277933899CC7245F22487 /* YourBatteryisDyingTests */,
 				BCE9B1372F314316000E2A75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +64,8 @@
 		BCE9B1372F314316000E2A75 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCE9B1362F314316000E2A75 /* deadbatterydummies.app */,
+				BCE9B1362F314316000E2A75 /* Your Battery Is Dying.app */,
+				0164F28E4AC60F0447D7FAD2 /* Your Battery is DyingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +73,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BCE9B1352F314315000E2A75 /* deadbatterydummies */ = {
+		A7ED8D0E36D50ABADA958A46 /* Your Battery is DyingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BCE9B1432F314316000E2A75 /* Build configuration list for PBXNativeTarget "deadbatterydummies" */;
+			buildConfigurationList = 6A6B0057DBDB2C046C041B3A /* Build configuration list for PBXNativeTarget "Your Battery is DyingTests" */;
+			buildPhases = (
+				AD22AE0C35A15FC5F85B28AC /* Sources */,
+				E74C492B359BAA0A29C8A458 /* Frameworks */,
+				47F5EEF8156B1F2426424C44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				986D809AABDBC2AD23543D91 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				73F277933899CC7245F22487 /* YourBatteryisDyingTests */,
+			);
+			name = "Your Battery is DyingTests";
+			packageProductDependencies = (
+			);
+			productName = deadbatterydummiesTests;
+			productReference = 0164F28E4AC60F0447D7FAD2 /* Your Battery is DyingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BCE9B1352F314315000E2A75 /* Your Battery is Dying */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCE9B1432F314316000E2A75 /* Build configuration list for PBXNativeTarget "Your Battery is Dying" */;
 			buildPhases = (
 				BCE9B1322F314315000E2A75 /* Sources */,
 				BCE9B1332F314315000E2A75 /* Frameworks */,
@@ -61,13 +109,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				BCE9B1382F314316000E2A75 /* deadbatterydummies */,
+				BCE9B1382F314316000E2A75 /* YourBatteryisDying */,
 			);
-			name = deadbatterydummies;
+			name = "Your Battery is Dying";
 			packageProductDependencies = (
 			);
 			productName = deadbatterydummies;
-			productReference = BCE9B1362F314316000E2A75 /* deadbatterydummies.app */;
+			productReference = BCE9B1362F314316000E2A75 /* Your Battery Is Dying.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -78,14 +126,17 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
+					A7ED8D0E36D50ABADA958A46 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					BCE9B1352F314315000E2A75 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = BCE9B1312F314315000E2A75 /* Build configuration list for PBXProject "deadbatterydummies" */;
+			buildConfigurationList = BCE9B1312F314315000E2A75 /* Build configuration list for PBXProject "Your Battery is Dying" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,12 +150,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BCE9B1352F314315000E2A75 /* deadbatterydummies */,
+				BCE9B1352F314315000E2A75 /* Your Battery is Dying */,
+				A7ED8D0E36D50ABADA958A46 /* Your Battery is DyingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		47F5EEF8156B1F2426424C44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCE9B1342F314315000E2A75 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +174,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD22AE0C35A15FC5F85B28AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCE9B1322F314315000E2A75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +190,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		986D809AABDBC2AD23543D91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCE9B1352F314315000E2A75 /* Your Battery is Dying */;
+			targetProxy = E412FC1F2E0CFEC69F1A9E90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		054FA902933A4EC1595C9E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = deadbatterydummiesTests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.obey.yourbatteryisdyingTests;
+				PRODUCT_NAME = "Your Battery is DyingTests";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Your Battery Is Dying.app/Contents/MacOS/Your Battery Is Dying";
+			};
+			name = Debug;
+		};
+		713BC5D99AA9FCD76529B0A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = deadbatterydummiesTests;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.obey.yourbatteryisdyingTests;
+				PRODUCT_NAME = "Your Battery is DyingTests";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Your Battery Is Dying.app/Contents/MacOS/Your Battery Is Dying";
+			};
+			name = Release;
+		};
 		BCE9B1412F314316000E2A75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -159,7 +277,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 72J2FUS22H;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -178,11 +298,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -222,7 +343,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 72J2FUS22H;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -235,10 +358,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -251,12 +375,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 72J2FUS22H;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "ADHD Hyperfocus Battery";
+				INFOPLIST_KEY_CFBundleDisplayName = "Your Battery Is Dying";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Obey LLC. All rights reserved.";
@@ -265,15 +389,14 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.obey.adhdhyperfocusbattery;
-				PRODUCT_NAME = "ADHD Hyperfocus Battery";
-				REGISTER_APP_GROUPS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.obey.yourbatteryisdying;
+				PRODUCT_NAME = "Your Battery Is Dying";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -285,12 +408,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 72J2FUS22H;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "ADHD Hyperfocus Battery";
+				INFOPLIST_KEY_CFBundleDisplayName = "Your Battery Is Dying";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Obey LLC. All rights reserved.";
@@ -299,22 +422,30 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.obey.adhdhyperfocusbattery;
-				PRODUCT_NAME = "ADHD Hyperfocus Battery";
-				REGISTER_APP_GROUPS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.obey.yourbatteryisdying;
+				PRODUCT_NAME = "Your Battery Is Dying";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BCE9B1312F314315000E2A75 /* Build configuration list for PBXProject "deadbatterydummies" */ = {
+		6A6B0057DBDB2C046C041B3A /* Build configuration list for PBXNativeTarget "Your Battery is DyingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				054FA902933A4EC1595C9E6A /* Debug */,
+				713BC5D99AA9FCD76529B0A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCE9B1312F314315000E2A75 /* Build configuration list for PBXProject "Your Battery is Dying" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BCE9B1412F314316000E2A75 /* Debug */,
@@ -323,7 +454,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BCE9B1432F314316000E2A75 /* Build configuration list for PBXNativeTarget "deadbatterydummies" */ = {
+		BCE9B1432F314316000E2A75 /* Build configuration list for PBXNativeTarget "Your Battery is Dying" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BCE9B1442F314316000E2A75 /* Debug */,

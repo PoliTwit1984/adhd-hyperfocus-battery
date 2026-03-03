@@ -3,120 +3,644 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADHD Hyperfocus Battery — Full-Screen Battery Alerts for Mac</title>
+    <title>Your Battery Is Dying — Full-Screen Battery Alerts for Mac</title>
+    <meta name="description" content="Full-screen battery alerts that break through hyperfocus. Built for ADHD brains that ignore every notification macOS throws at them. $3.99, no subscriptions.">
+    <meta property="og:title" content="Your Battery Is Dying">
+    <meta property="og:description" content="Full-screen battery alerts you can't ignore. Because macOS notifications don't work on your brain.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourbatteryisdying.com">
+    <link rel="canonical" href="https://yourbatteryisdying.com">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --red: #ff3b30;
+            --orange: #ff6b35;
+            --bg: #050505;
+            --surface: #0d0d0d;
+            --border: #1a1a1a;
+            --text: #e0e0e0;
+            --muted: #777;
+            --white: #fff;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 60px 24px;
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 24px;
+            position: relative;
         }
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 59, 48, 0.08) 0%, transparent 70%);
+            pointer-events: none;
         }
-        .tagline {
-            font-size: 1.2rem;
-            color: #888;
-            margin-bottom: 48px;
-            font-style: italic;
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 100px;
+            background: rgba(255, 59, 48, 0.1);
+            border: 1px solid rgba(255, 59, 48, 0.2);
+            font-size: 0.85rem;
+            color: var(--orange);
+            margin-bottom: 32px;
+            font-weight: 500;
         }
-        h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #fff;
-            margin-top: 40px;
-            margin-bottom: 16px;
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
         }
-        p {
-            margin-bottom: 16px;
-            color: #b0b0b0;
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 24px;
         }
-        .features {
-            list-style: none;
-            margin: 24px 0;
+
+        .hero h1 .dying {
+            background: linear-gradient(135deg, var(--red), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .features li {
-            padding: 12px 0;
-            border-bottom: 1px solid #1a1a1a;
-            color: #ccc;
+
+        .hero-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto 48px;
+            line-height: 1.5;
         }
-        .features li:last-child { border-bottom: none; }
-        .features li strong { color: #fff; }
-        .cta {
-            display: inline-block;
-            margin-top: 32px;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, #ff6b35, #ff3b3b);
-            color: #fff;
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--red), var(--orange));
+            color: var(--white);
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 24px rgba(255, 59, 48, 0.3);
         }
-        .cta:hover { transform: scale(1.03); }
-        .footer {
-            margin-top: 80px;
-            padding-top: 24px;
-            border-top: 1px solid #1a1a1a;
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(255, 59, 48, 0.4);
+        }
+
+        .hero-price {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .hero-price strong {
+            color: var(--white);
+        }
+
+        /* The Problem */
+        .problem {
+            padding: 120px 24px;
+            text-align: center;
+        }
+
+        .problem-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .problem h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+        }
+
+        .problem p {
+            font-size: 1.15rem;
+            color: #999;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .problem .highlight {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Alert mockup */
+        .mockup-section {
+            padding: 80px 24px;
+        }
+
+        .mockup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            position: relative;
+        }
+
+        .mockup-titlebar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #1a1a1a;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mockup-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .mockup-dot.red { background: #ff5f57; }
+        .mockup-dot.yellow { background: #febc2e; }
+        .mockup-dot.green { background: #28c840; }
+
+        .mockup-screen {
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255,59,48,0.06), rgba(128,0,255,0.04), rgba(0,0,0,0.2));
+            position: relative;
+        }
+
+        .mockup-alert {
+            text-align: center;
+            padding: 48px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .mockup-icon {
+            font-size: 56px;
+            margin-bottom: 16px;
+        }
+
+        .mockup-title {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.01em;
+        }
+
+        .mockup-pct {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--red);
+            margin: 8px 0 16px;
+        }
+
+        .mockup-sub {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .mockup-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .mockup-btn {
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            cursor: default;
+        }
+
+        .mockup-btn.snooze {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .mockup-btn.dismiss {
+            background: linear-gradient(135deg, var(--red), #cc2b22);
+            color: var(--white);
+        }
+
+        /* Pulse ring animation */
+        .pulse-ring {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 2px solid var(--red);
+            border-radius: 50%;
+            opacity: 0;
+            animation: pulse 3s ease-out infinite;
+        }
+
+        .pulse-ring:nth-child(2) { animation-delay: 1s; }
+        .pulse-ring:nth-child(3) { animation-delay: 2s; }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.4; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 24px;
+        }
+
+        .features-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: var(--white);
+            text-align: center;
+            letter-spacing: -0.02em;
+            margin-bottom: 64px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 32px;
+            border-radius: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: #333;
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .feature-icon.red { background: rgba(255, 59, 48, 0.12); }
+        .feature-icon.orange { background: rgba(255, 149, 0, 0.12); }
+        .feature-icon.blue { background: rgba(0, 122, 255, 0.12); }
+        .feature-icon.purple { background: rgba(175, 82, 222, 0.12); }
+        .feature-icon.green { background: rgba(52, 199, 89, 0.12); }
+        .feature-icon.gray { background: rgba(142, 142, 147, 0.12); }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Perfect for */
+        .audience {
+            padding: 100px 24px;
+        }
+
+        .audience-inner {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .audience h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+        }
+
+        .audience-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .audience-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.1rem;
+            color: #bbb;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .audience-list li:last-child { border-bottom: none; }
+
+        .audience-list .bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--red);
+            flex-shrink: 0;
+        }
+
+        /* Privacy */
+        .privacy-bar {
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .privacy-bar-inner {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+
+        .privacy-bar h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .privacy-bar p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .privacy-pills {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .privacy-pill {
+            padding: 8px 20px;
+            border-radius: 100px;
             font-size: 0.85rem;
-            color: #555;
+            font-weight: 500;
+            background: rgba(52, 199, 89, 0.08);
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.15);
         }
-        .footer a { color: #888; text-decoration: none; }
-        .footer a:hover { color: #ccc; }
-        .links { margin-top: 12px; }
-        .links a { margin-right: 24px; }
+
+        /* CTA bottom */
+        .cta-bottom {
+            padding: 100px 24px;
+            text-align: center;
+        }
+
+        .cta-bottom h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .cta-bottom p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #444;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .mockup-alert { padding: 32px 20px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .privacy-pills { flex-direction: column; align-items: center; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>ADHD Hyperfocus Battery</h1>
-        <p class="tagline">Your battery is dying. You didn't notice. Again.</p>
 
-        <p>You're in the zone — coding, writing, designing, gaming — and your MacBook dies. Work gone. Flow broken.</p>
-        <p>macOS shows you a tiny notification. You ignore it. Every time.</p>
-        <p>ADHD Hyperfocus Battery fixes this with one simple idea: when your battery hits your threshold, the entire screen lights up. No dismissing it on autopilot. No missing it in a stack of notifications.</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="7" width="12" height="10" rx="1"/><line x1="10" y1="7" x2="10" y2="4"/><line x1="14" y1="7" x2="14" y2="4"/></svg>
+            macOS Utility
+        </div>
+        <h1>Your Battery<br>Is <span class="dying">Dying</span></h1>
+        <p class="hero-sub">Full-screen alerts that break through hyperfocus. Because that tiny macOS notification never worked on your brain.</p>
+        <a class="hero-cta" href="#">Coming Soon to the Mac App Store</a>
+        <p class="hero-price"><strong>$3.99</strong> &mdash; one purchase, works forever</p>
+    </section>
 
-        <h2>How It Works</h2>
-        <ul class="features">
-            <li><strong>Set your threshold</strong> — default 7%, adjustable from 1-50%</li>
-            <li><strong>Keep working</strong> — the app sits in your menu bar, uses zero CPU</li>
-            <li><strong>Full-screen alert</strong> — when battery drops below your number, you'll know</li>
-            <li><strong>Snooze or dismiss</strong> — 5-minute snooze, or plug in and get back to it</li>
-        </ul>
+    <!-- The Problem -->
+    <section class="problem">
+        <div class="problem-inner">
+            <h2>You know exactly what happens.</h2>
+            <p>You're deep in the zone &mdash; coding, writing, designing, gaming &mdash; and your MacBook dies. <span class="highlight">Work gone. Flow broken.</span></p>
+            <p>macOS showed you a notification. You dismissed it without even looking at it. <span class="highlight">Every. Single. Time.</span></p>
+            <p>This app does one thing: when your battery hits your threshold, <span class="highlight">the entire screen lights up.</span> No dismissing on autopilot. No missing it in a stack of notifications. You see it, you deal with it, you get back to work.</p>
+        </div>
+    </section>
 
-        <h2>Built for Your Brain</h2>
-        <ul class="features">
-            <li><strong>Full-screen glass UI</strong> across all displays</li>
-            <li><strong>Pulsing animation</strong> that cuts through hyperfocus</li>
-            <li><strong>Confirmation before dismiss</strong> — so you don't autopilot past it</li>
-            <li><strong>Optional alert sound</strong></li>
-            <li><strong>Launch at login</strong> — set it and forget it</li>
-        </ul>
+    <!-- Alert Mockup -->
+    <section class="mockup-section">
+        <div class="mockup-container">
+            <div class="mockup-titlebar">
+                <div class="mockup-dot red"></div>
+                <div class="mockup-dot yellow"></div>
+                <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-screen">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring"></div>
+                <div class="mockup-alert">
+                    <div class="mockup-icon">🪫</div>
+                    <div class="mockup-title">YOUR BATTERY IS DYING</div>
+                    <div class="mockup-pct">7%</div>
+                    <div class="mockup-sub">Plug in your charger now!</div>
+                    <div class="mockup-buttons">
+                        <div class="mockup-btn snooze">Snooze 5 min</div>
+                        <div class="mockup-btn dismiss">Dismiss</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2>No Tracking. No Data. No Nonsense.</h2>
-        <p>Your battery level stays on your Mac. No analytics, no accounts, no internet required. One purchase, works forever.</p>
+    <!-- Features -->
+    <section class="features">
+        <div class="features-inner">
+            <h2>Built for how your brain actually works.</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon red">🖥</div>
+                    <h3>Full-Screen Glass Alert</h3>
+                    <p>Covers every connected display. Pulsing animation cuts through even the deepest hyperfocus.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon orange">⚡</div>
+                    <h3>Custom Threshold</h3>
+                    <p>Set your alert anywhere from 1% to 50%. Default is 7% &mdash; enough time to find your charger.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon blue">⏰</div>
+                    <h3>5-Minute Snooze</h3>
+                    <p>"I know, give me 5 minutes." One click and you're back in your flow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon purple">🔊</div>
+                    <h3>Optional Alert Sound</h3>
+                    <p>Breaks through headphones. Turn it off if the visual is enough for you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon green">⚙️</div>
+                    <h3>Launch at Login</h3>
+                    <p>Set it once, forget about it. Lives quietly in your menu bar until you need it.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gray">🔋</div>
+                    <h3>Zero CPU Usage</h3>
+                    <p>Event-driven monitoring via Apple's IOKit. No polling, no drain. Activates only when battery state changes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <a class="cta" href="https://apps.apple.com/app/adhd-hyperfocus-battery/id0000000000">Download on the Mac App Store</a>
+    <!-- Audience -->
+    <section class="audience">
+        <div class="audience-inner">
+            <h2>Perfect for</h2>
+            <ul class="audience-list">
+                <li><span class="bullet"></span>ADHD brains that hyperfocus through every warning</li>
+                <li><span class="bullet"></span>Developers, writers, and designers in deep work</li>
+                <li><span class="bullet"></span>Students who can't lose that essay again</li>
+                <li><span class="bullet"></span>Gamers who don't check their battery mid-session</li>
+                <li><span class="bullet"></span>Anyone who's ever said "I didn't see the notification"</li>
+            </ul>
+        </div>
+    </section>
 
-        <div class="footer">
+    <!-- Privacy -->
+    <section class="privacy-bar">
+        <div class="privacy-bar-inner">
+            <h2>No tracking. No data. No nonsense.</h2>
+            <p>Your battery level stays on your Mac. Period.</p>
+            <div class="privacy-pills">
+                <span class="privacy-pill">No analytics</span>
+                <span class="privacy-pill">No accounts</span>
+                <span class="privacy-pill">No internet required</span>
+                <span class="privacy-pill">No subscriptions</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="cta-bottom">
+        <h2>Never lose work to a dead battery again.</h2>
+        <p>One app. One purchase. Full-screen alerts that actually work.</p>
+        <a class="hero-cta" href="#">Coming Soon to the Mac App Store</a>
+        <p class="hero-price"><strong>$3.99</strong> &mdash; no subscriptions, no in-app purchases</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
             <p>&copy; 2026 Obey LLC. All rights reserved.</p>
-            <div class="links">
-                <a href="/adhd-hyperfocus-battery/privacy">Privacy Policy</a>
-                <a href="/adhd-hyperfocus-battery/support">Support</a>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/support">Support</a>
                 <a href="https://github.com/PoliTwit1984/adhd-hyperfocus-battery">GitHub</a>
             </div>
         </div>
-    </div>
+    </footer>
+
 </body>
 </html>

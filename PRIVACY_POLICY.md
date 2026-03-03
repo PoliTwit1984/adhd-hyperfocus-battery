@@ -1,10 +1,10 @@
-# Privacy Policy for ADHD Hyperfocus Battery
+# Privacy Policy for Your Battery Is Dying
 
-**Last Updated:** February 2, 2026
+**Last Updated:** March 3, 2026
 
 ## Overview
 
-ADHD Hyperfocus Battery ("the App") is designed with your privacy in mind. We do not collect, store, or transmit any personal data.
+Your Battery Is Dying ("the App") is designed with your privacy in mind. We do not collect, store, or transmit any personal data.
 
 ## Data Collection
 
@@ -52,9 +52,9 @@ If we make changes to this privacy policy, we will update the "Last Updated" dat
 
 If you have questions about this privacy policy, please contact:
 
-**Email:** [your-email@example.com]  
-**GitHub:** [https://github.com/username/hyperfocusbattery](https://github.com/username/hyperfocusbattery)
+**Email:** support@obeyllc.com
+**GitHub:** [https://github.com/PoliTwit1984/adhd-hyperfocus-battery](https://github.com/PoliTwit1984/adhd-hyperfocus-battery)
 
 ---
 
-© 2026 Obey LLC. All rights reserved.
+Copyright 2026 Obey LLC. All rights reserved.

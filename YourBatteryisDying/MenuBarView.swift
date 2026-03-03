@@ -1,6 +1,6 @@
 //
 //  MenuBarView.swift
-//  deadbatterydummies
+//  Your Battery Is Dying
 //
 //  Created by Joe Wilson on 2/2/26.
 //
@@ -178,6 +178,7 @@ struct MenuBarView: View {
             ) {
                 appState.showTestAlert()
             }
+            .keyboardShortcut("t", modifiers: .command)
             .onHover { isHoveringTest = $0 }
             
             // Glass divider
@@ -224,6 +225,7 @@ struct MenuBarView: View {
             ) {
                 NSApplication.shared.terminate(nil)
             }
+            .keyboardShortcut("q", modifiers: .command)
             .onHover { isHoveringQuit = $0 }
         }
         .frame(width: 280)
@@ -239,9 +241,9 @@ struct MenuBarView: View {
             return "bolt.fill"
         }
         if monitor.batteryLevel <= appState.alertThreshold {
-            return "brain.head.profile"
+            return "battery.0percent"
         }
-        return "brain.head.profile.fill"
+        return "battery.75percent"
     }
     
     private var batteryColor: Color {

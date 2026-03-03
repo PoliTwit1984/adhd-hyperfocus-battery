@@ -1,89 +1,104 @@
-# App Store Metadata for ADHD Hyperfocus Battery
+# App Store Metadata for Your Battery Is Dying
 
 ## App Information
 
-**App Name:** ADHD Hyperfocus Battery  
-**Subtitle:** Full-Screen Low Battery Alerts  
-**Category:** Utilities  
+**App Name:** Your Battery Is Dying
+**Subtitle:** Full-Screen Battery Alerts
+**Category:** Utilities
 **Secondary Category:** Productivity
-**Price:** Free (or $1.99)  
+**Price:** $3.99
 
 ---
 
 ## App Store Description
 
-**For the hyperfocused mind that forgets to charge.**
+**Your battery is dying. You didn't notice. Again.**
 
-You're deep in the zone. Code is flowing. Ideas are connecting. Then suddenly... your laptop dies. That tiny macOS battery warning at 10%? You dismissed it without even seeing it.
+You're in the zone — coding, writing, designing, gaming — and your MacBook dies. Work gone. Flow broken. Sound familiar?
 
-Sound familiar? You might have ADHD, or maybe you just get really focused. Either way, **ADHD Hyperfocus Battery** has your back.
+macOS shows you a tiny notification. You ignore it. Every time.
+
+Your Battery Is Dying fixes this with one simple idea: when your battery hits your threshold, the entire screen lights up. No dismissing it on autopilot. No missing it in a stack of notifications. You see it, you deal with it, you get back to work.
 
 **How it works:**
+- Set your battery threshold (default 7%, adjustable 1-50%)
+- Keep working like normal
+- When battery drops below your number — full-screen alert, impossible to miss
+- Snooze for 5 minutes or dismiss and plug in
+- That's it. No setup. No accounts. No subscriptions.
 
-When your battery drops to your chosen threshold, a beautiful full-screen alert takes over your display. No more ignoring tiny notifications. This one demands your attention — then gets out of your way.
+**Built for how your brain actually works:**
+- Full-screen glass UI alert across all displays
+- Pulsing animation that cuts through hyperfocus
+- Optional alert sound
+- Snooze button for "I know, give me 5 minutes"
+- Confirmation before dismiss (so you don't autopilot past it)
+- Lives in your menu bar, uses zero CPU until needed
 
-**Built for neurodivergent brains:**
+**No tracking. No data collection. No nonsense.**
 
-◆ **Full-Screen Alerts** — Unmissable warnings that break through hyperfocus
-◆ **Liquid Glass UI** — Beautiful, modern design that doesn't feel intrusive
-◆ **Customizable Threshold** — Alert at 7%, 10%, 15% — whatever works for you
-◆ **Snooze Option** — "I'll plug in soon" = remind me in 5 minutes
-◆ **Launch at Login** — Set it and forget it (until you need it)
-◆ **Alert Sound** — Optional audio for when you're wearing headphones
+Your battery level stays on your Mac. We don't collect analytics, usage data, or personal information. Period.
 
-**Zero distraction when you don't need it:**
+**Perfect for:**
+- ADHD brains that hyperfocus through every warning
+- Developers, writers, and designers in deep work
+- Students who can't lose that essay again
+- Anyone who's ever said "I didn't see the notification"
 
-ADHD Hyperfocus Battery sits quietly in your menu bar using virtually no resources. It only activates when your battery actually changes — no constant polling, no background drain.
-
-**Your focus. Protected.**
-
-Join thousands of ADHD warriors, developers, writers, and anyone who's ever lost work to a dead battery. Download ADHD Hyperfocus Battery today.
+One purchase. Works forever. Never lose work to a dead battery again.
 
 ---
 
 ## Keywords (100 characters max)
 
+```text
+adhd,battery,alert,hyperfocus,low battery,focus,notification,reminder,neurodivergent,menu bar
 ```
-ADHD,battery,alert,hyperfocus,focus,low battery,reminder,neurodivergent,productivity,menu bar
+
+---
+
+## Promotional Text (170 chars max)
+
+```text
+Stop losing work to dead batteries. One full-screen alert is worth a thousand ignored notifications.
+```
+
+---
+
+## What's New (Version 1.0)
+
+```text
+Hello, world. Your battery warnings just got impossible to ignore.
+
+- Full-screen alerts across all displays
+- Customizable battery threshold (1-50%)
+- 5-minute snooze
+- Optional alert sound
+- Launch at login
+- Zero CPU usage when idle
 ```
 
 ---
 
 ## Screenshots Needed
 
-1. **Menu Bar Dropdown** — Show the glass UI with brain icon, battery %, threshold slider
-2. **Full-Screen Alert** — The dramatic liquid glass warning
+1. **Menu Bar Dropdown** — Show the glass UI with battery icon, battery %, threshold slider
+2. **Full-Screen Alert** — The dramatic glass warning
 3. **Alert with Snooze** — Both action buttons visible
 4. **Settings Toggles** — Launch at login, sound options
 
-**Recommended sizes:** 1280 x 800 or 2560 x 1600 (Retina)
+**Recommended sizes:** 2560 x 1600 (Retina)
 
 ---
 
-## What's New (Version 1.0)
+## URLs
 
-Initial release:
-- Full-screen battery alerts with liquid glass UI
-- Customizable alert threshold
-- Snooze functionality
-- Launch at login
-- Optional alert sounds
-- Event-driven monitoring (zero idle CPU)
+- **Support:** https://yourbatteryisdying.com/support
+- **Privacy Policy:** https://yourbatteryisdying.com/privacy
+- **Marketing:** https://yourbatteryisdying.com/
 
 ---
 
-## Support URL
+## App Store Review Notes
 
-`https://github.com/[username]/hyperfocusbattery/issues`
-
----
-
-## Marketing URL
-
-`https://hyperfocusbattery.app` (register this domain)
-
----
-
-## Privacy Policy URL
-
-Host PRIVACY_POLICY.md content at a public URL.
+This app displays a full-screen overlay alert when the battery drops below a user-configured threshold. The overlay uses NSWindow at .floating level (not .screenSaver) and includes dismiss/snooze buttons plus a 60-second auto-dismiss safety fallback. The alert auto-dismisses when the user plugs in their charger. This behavior is the core feature of the app and is clearly communicated to users during onboarding.

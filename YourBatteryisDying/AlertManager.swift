@@ -1,6 +1,6 @@
 //
 //  AlertManager.swift
-//  deadbatterydummies
+//  Your Battery Is Dying
 //
 //  Created by Joe Wilson on 2/2/26.
 //
@@ -13,6 +13,7 @@ import SwiftUI
 class AlertManager {
     var isShowingAlert: Bool = false
     private var alertWindows: [NSWindow] = []
+    private var autoDismissTask: Task<Void, Never>?
     
     func showAlert(batteryLevel: Int, onSnooze: @escaping @MainActor () -> Void, onDismiss: @escaping @MainActor () -> Void) {
         guard !isShowingAlert else { return }
@@ -37,10 +38,10 @@ class AlertManager {
         }
         
         // Activate the app to bring windows to front
-        NSApp.activate(ignoringOtherApps: true)
+        NSApp.activate()
         
         // Safety: Auto-dismiss after 60 seconds in case user can't dismiss manually
-        Task {
+        autoDismissTask = Task {
             try? await Task.sleep(for: .seconds(60))
             if isShowingAlert {
                 dismissAllAlerts()
@@ -50,11 +51,21 @@ class AlertManager {
     }
     
     func dismissAllAlerts() {
-        for window in alertWindows {
-            window.close()
-        }
-        alertWindows.removeAll()
+        autoDismissTask?.cancel()
+        autoDismissTask = nil
         isShowingAlert = false
+        // Grab windows and clear the array immediately
+        let windows = alertWindows
+        alertWindows.removeAll()
+        // Defer actual window close to next run loop tick so the
+        // button action that triggered this can finish first.
+        // Closing synchronously destroys the view mid-action → hard lock.
+        DispatchQueue.main.async {
+            for window in windows {
+                window.orderOut(nil)
+                window.close()
+            }
+        }
     }
     
     private func createAlertWindow(for screen: NSScreen, batteryLevel: Int, onSnooze: @escaping () -> Void, onDismiss: @escaping () -> Void) -> NSWindow {
